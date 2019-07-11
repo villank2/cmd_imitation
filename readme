@@ -1,0 +1,114 @@
+#Name: Kyle Angelo Villanueva
+#17428562
+NAME:
+
+Myshell
+
+SYNOPSIS:
+
+python3 MyShell.py [file]
+
+DESCRIPTION:
+
+MyShell is a command line shell compiled in python3.
+Supported on a Linux platform.
+
+PREREQUISITES:
+-OUTPUT REDIRECTION: This is the concept of changing the output destination of a
+program. In general a print statement will print the output on the terminal.However,
+if the program supports output redirection, and if there is an indication of output redirection using
+the greater than sign >, the output will be written to the destination file.
+If the file does not exist, a new file will be created.
+File writing has two options, overwrite the contents of the file or extend the file.
+Two greater than signs >> suggests appending or extension to the destination file.
+Example:
+    program arg1 arg2 > filename 
+    program arg1 arg2 >> filename
+
+-BACKGROUND PROGRAM EXECUTION: Running a program as a background process allows the user 
+to interact with the main program(myshell.py for this case) whilst the background process executes. An ampersand &
+at the end of a command line is an indication that the program will run as a background process.
+Example:
+    command args &
+    python3 hello.py &
+
+-PROGRAM ENVIRONMENT: The set of executable process, support tools and accessible files
+used to run the program.
+
+SUPPORTED COMMANDS:
+
+dir
+- Lists out the contents of the current working directory if not given an argument.
+Lists the contents of the given argument if it's a valid directory.
+It supports output redirection.
+-How to call:
+    (without IO redirection)
+    dir
+    dir directory
+    (with IO redirection)
+    dir directory > filename
+-----------------------------------------------------
+
+environ
+- Lists out the current environment variable strings.
+Does not take an argument.
+It supports output redirection.
+-How to call:
+    (without IO redirection)
+    environ
+    (with IO redirection)
+    environ > filename
+-----------------------------------------------------
+
+help
+-Displays the manual in blocks of 20 lines. 
+Gives a description for all executable commands supported by the shell.
+The description consists of the command function a brief note on what it does, 
+if it takes any argument(s) and whether it supports IO redirection or not.
+It accepts an argument which is any of all callable commands.
+Output redirection is supported.
+-How to call:
+    (without IO redirection)
+    help
+    help [callable command]
+    (with IO redirection)
+    help > filename
+    help [callable command] > filename
+-----------------------------------------------------
+
+echo
+-Accepts an argument of a string or space divided string.
+Strips multiple spaces or tabs.
+Displays a copy of the given argument on the terminal.
+Supports output redirection, writes it into a file for this case.
+-How to call:
+    (without IO redirection)
+    echo some-string
+    (with IO redirection)  
+    echo hello world > filename
+-----------------------------------------------------
+
+cd
+-Accepts an argument which must be a directory name.
+It changes the current working directory to the given
+valid directory. If the argument is invalid, an exception
+is raised.
+If no argument given, it displays the current working directory.
+-How to call:
+    cd [name of existing directory/folder]
+-----------------------------------------------------
+
+pause
+-Temporarily limits the user from calling a shell command until the
+enter key is pressed.
+-----------------------------------------------------
+
+clear
+-Clears the shell screen.
+-----------------------------------------------------
+
+quit
+-Prompts SystemExit after user confirmation.
+-----------------------------------------------------
+
+-END-
